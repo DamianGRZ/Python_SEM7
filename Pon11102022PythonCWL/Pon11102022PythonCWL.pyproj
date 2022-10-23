@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>25acb004-8d8e-44c0-a8c1-97c1a51d785b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Pon11102022PythonCWL.py</StartupFile>
+    <StartupFile>Classes.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Calculations_and_algorithms.py" />
+    <Compile Include="Classes.py" />
     <Compile Include="inout.py" />
+    <Compile Include="text.py" />
     <Compile Include="workWithFiles.py" />
     <Compile Include="Pon11102022PythonCWL.py" />
   </ItemGroup>

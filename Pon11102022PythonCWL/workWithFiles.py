@@ -11,13 +11,12 @@ def count_files(fullPath):
     return count
 
 def rec_show_trunk(startPath, indentation):
-
+    indentation += 1
     for path in startPath.glob('*'):
         # check if current path is a file
         if os.path.isfile(path):
             print(indentation*" ", path)
         else:
-            indentation += 1
             rec_show_trunk(path, indentation)
 
 
@@ -31,3 +30,21 @@ def jpg2png(fullPath):
                 newfile_name = path.stem + ".png"
                 print(newfile_name)
                 im.save(newfile_name)
+
+#EX2
+if __name__ == "__main__":
+    # Count files
+    print("----------------------------------------------------------")
+    print("Ex2.1, Count files:")
+    print("Files count:", count_files('D:\Semestr7\Python'))
+
+    # Count files
+    print("----------------------------------------------------------")
+    print("Ex2.2, Directory structure:")
+    indentation = 0
+    rec_show_trunk(Path('D:\Semestr7'), indentation)
+    
+    # Count files
+    print("----------------------------------------------------------")
+    print("Ex2.3, File conversion from jpg to png:")
+    jpg2png(Path('D:\Semestr7\Python\jpg_files'))

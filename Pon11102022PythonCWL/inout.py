@@ -1,3 +1,5 @@
+import os
+
 #Excersise 1, module input/output
 def hello_world():
     print("Hello world")
@@ -36,3 +38,20 @@ def Lock():
         print("Correct")
     else:
         print("Incorrect")
+
+#EX1
+if __name__ == "__main__":
+    # Hello World
+    print("----------------------------------------------------------")
+    print("Ex1.1, Hello world:")
+    hello_world()
+
+    # Data input
+    print("----------------------------------------------------------")
+    print("Ex1.2, Data input:")
+    input_data()
+
+    # Encrypting lock
+    print("----------------------------------------------------------")
+    print("Ex1.3, Encrypting lock:")
+    Lock();
