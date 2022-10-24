@@ -35,13 +35,19 @@ def scalarProduct(a, b):
 
 
 def matrix_sum(m1, m2):
-    if len(m1[0]) == len(m1[0]) and len(m1) == len(m2):
-        return [
-            [m1[i][j] + m2[i][j] for j in range(len(m1[0]))] for i in range(len(m1))
-        ]
-    else:
-        print("Matrices are not of the same dimensions")
-        return 0
+    try:
+        if(len(m1[0]) == len(m1[0]) and len(m1) == len(m2)):
+            return [[m1[i][j] + m2[i][j] for j in range(len(m1[0]))] for i in range(len(m1))]
+    except:
+        print ("error" + "Matrices are not of the same dimensions")
+        raise AssertionError("Matrices are not of the same dimensions")
+    #if len(m1[0]) == len(m1[0]) and len(m1) == len(m2):
+    #    return [
+    #        [m1[i][j] + m2[i][j] for j in range(len(m1[0]))] for i in range(len(m1))
+    #    ]
+    #else:
+    #    print("Matrices are not of the same dimensions")
+    #    return 0
 
 
 def matrix_mul(m1, m2):
@@ -53,7 +59,8 @@ def matrix_mul(m1, m2):
                     result[row][col] += m1[row][col] * m2[i][col]
         return result
     else:
-        return "Sorry, wrong dimensions"
+        raise Exception("Sorry, incorrect matrix dimensions")
+        return #Rise exception nazwane
 
 def sub_matrix(matrix, row, column):
     sub_matrix = matrix[:]
@@ -65,8 +72,9 @@ def matrix_determinant(matrix):
     num_rows = len(matrix)
     num_cols = len(matrix[0])
     if(num_rows != num_cols):
-        print("Not a square matrix")
-        return None
+        #print("Not a square matrix")
+        raise Exception("Not a square matrix")
+        return
     if len(matrix) == 2:
         return matrix[0][0] * matrix[1][1] - matrix[1][0] * matrix[0][1]
     else:
@@ -120,7 +128,7 @@ if __name__ == "__main__":
     print("----------------------------------------------------------")
     print("Ex4.4, caluclate matrix sum of 2 matrices 128x128:")
     randomMatrix1 = np.random.randint(3, size=(128, 128))
-    randomMatrix2 = np.random.randint(3, size=(128, 128))
+    randomMatrix2 = np.random.randint(3, size=(127, 128))
     matrixSum = matrix_sum(randomMatrix1, randomMatrix2)
     print(matrix_sum(randomMatrix1, randomMatrix2))
     # Matrix multiplication

@@ -4,10 +4,12 @@ from PIL import Image
 
 def count_files(fullPath):
     count = 0
-    for path in os.listdir(fullPath):
+    for path in fullPath.glob('*'):
         # check if current path is a file
-        if os.path.isfile(os.path.join(fullPath, path)):
-            count += 1
+        if os.path.isfile(path):
+                count += 1
+        else:
+            count = count + count_files(path)
     return count
 
 def rec_show_trunk(startPath, indentation):
@@ -25,24 +27,23 @@ def jpg2png(fullPath):
         # check if current path is a file
         if os.path.isfile(path):
             file_extension = path.suffix
-            if file_extension == ".jpg":
-                im = Image.open(path)
-                newfile_name = path.stem + ".png"
-                print(newfile_name)
-                im.save(newfile_name)
+            im = Image.open(path)
+            newfile_name = path.stem + ".png"#funja with suffix
+            print(newfile_name)
+            im.save(newfile_name)
 
 #EX2
-if __name__ == "__main__":
-    # Count files
-    print("----------------------------------------------------------")
-    print("Ex2.1, Count files:")
-    print("Files count:", count_files('D:\Semestr7\Python'))
+if __name__ == "__main__":#uruchamianie oddzielne zadania
+    ##Count files
+    #print("----------------------------------------------------------")
+    #print("Ex2.1, Count files:")
+    #print("Files count:", count_files(Path('D:\Semestr7\Python')))
 
-    # Count files
-    print("----------------------------------------------------------")
-    print("Ex2.2, Directory structure:")
-    indentation = 0
-    rec_show_trunk(Path('D:\Semestr7'), indentation)
+    ## Directory structure
+    #print("----------------------------------------------------------")
+    #print("Ex2.2, Directory structure:")
+    #indentation = 0
+    #rec_show_trunk(Path('D:\Semestr7'), indentation)
     
     # Count files
     print("----------------------------------------------------------")

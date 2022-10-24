@@ -22,7 +22,7 @@ def delete_silver_word(fpath):
                                 else:
                                     newline = newline + " " + word
                             #Remove leading and trailing spaces using RegEx
-                            newline = re.sub(r"^\s+|\s+$", "", newline)  # | for OR condition
+                            newline = re.sub(r"^\s+|\s+$", "", newline)  # | for OR condition #taka sama func str.strip()
                             newlines.append(newline)
                         lines = newlines
                     #save to file

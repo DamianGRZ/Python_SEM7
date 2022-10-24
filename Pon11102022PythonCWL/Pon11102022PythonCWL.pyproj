@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>25acb004-8d8e-44c0-a8c1-97c1a51d785b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Classes.py</StartupFile>
+    <StartupFile>Calculations_and_algorithms.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
