@@ -5,6 +5,11 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Pon11102022PythonCWL", "Pon11102022PythonCWL.pyproj", "{25ACB004-8D8E-44C0-A8C1-97C1A51D785B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{0852BD66-C0D4-478F-BE25-880066D0589D}"
+	ProjectSection(SolutionItems) = preProject
+		Ex6.xml = Ex6.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

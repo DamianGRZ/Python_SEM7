@@ -2,7 +2,6 @@ from calendar import c
 import os
 from pathlib import Path
 from PIL import Image
-import workWithFiles
 import random
 import inout
 import text

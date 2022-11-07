@@ -1,6 +1,7 @@
 import os
 import re
 from pathlib import Path
+#timeit lub timePerformanceTimer
 
 def delete_silver_word(fpath):
     excludedWords = ["Sie", "oraz", "i", "dlaczego", "nigdy"]
@@ -21,15 +22,12 @@ def delete_silver_word(fpath):
                                     continue
                                 else:
                                     newline = newline + " " + word
-                            #Remove leading and trailing spaces using RegEx
-                            newline = re.sub(r"^\s+|\s+$", "", newline)  # | for OR condition #taka sama func str.strip()
+                            #Remove leading and trailing spaces using strip()
+                            newline.strip()  # | for OR condition #taka sama func str.strip()
                             newlines.append(newline)
                         lines = newlines
                     #save to file
-                    completeName = os.path.join(os.path.dirname(path), "excluded.txt") 
-                    with open(completeName, 'w') as outfile:
-                        for line in lines:
-                            outfile.write("{}\n".format(line))
+                    Save_to_file(path, lines)
 
 def change_silver_word(fpath):
     changeWords = {
@@ -58,15 +56,17 @@ def change_silver_word(fpath):
                                     continue
                             if change_flag == 0:
                                 newline = newline + " " + word
-                        #Remove leading and trailing spaces using RegEx
-                        newline = re.sub(r"^\s+|\s+$", "", newline)  # | for OR condition
+                        newline.strip()
                         newlines.append(newline)
                     lines = newlines
-                    #save to file
-                    completeName = os.path.join(os.path.dirname(path), "changed.txt") 
-                    with open(completeName, 'w') as outfile:
-                        for line in lines:
-                            outfile.write("{}\n".format(line))
+                    Save_to_file(path, lines)
+
+
+def Save_to_file(fullPath, lines):
+    completeName = os.path.join(os.path.dirname(fullPath), "changed.txt") 
+    with open(completeName, 'w') as outfile:
+        for line in lines:
+            outfile.write("{}\n".format(line))
 
 #EX3
 if __name__ == "__main__":

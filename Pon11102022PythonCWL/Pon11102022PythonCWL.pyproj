@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>25acb004-8d8e-44c0-a8c1-97c1a51d785b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Calculations_and_algorithms.py</StartupFile>
+    <StartupFile>Classes.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,9 @@
     <Compile Include="Calculations_and_algorithms.py" />
     <Compile Include="Classes.py" />
     <Compile Include="inout.py" />
+    <Compile Include="Jsonnn.py" />
+    <Compile Include="ParsowanieXMLdom.py" />
+    <Compile Include="ParsowanieXMLsax.py" />
     <Compile Include="text.py" />
     <Compile Include="workWithFiles.py" />
     <Compile Include="Pon11102022PythonCWL.py" />

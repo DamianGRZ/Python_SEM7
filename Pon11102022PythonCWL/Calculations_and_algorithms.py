@@ -2,6 +2,7 @@ from copy import deepcopy
 import math
 import random
 import numpy as np
+import unittest
 
 # Obliczenia
 def quadratic_equation(a, b, c):
@@ -24,7 +25,7 @@ def sort(toSort):
         for j in range(listLenght - 1, listLenght - i, -1):
             if toSort[j] > toSort[j - 1]:
                 toSort[j], toSort[j - 1] = toSort[j - 1], toSort[j]
-    print(toSort)
+    return toSort
 
 
 def scalarProduct(a, b):
@@ -41,14 +42,6 @@ def matrix_sum(m1, m2):
     except:
         print ("error" + "Matrices are not of the same dimensions")
         raise AssertionError("Matrices are not of the same dimensions")
-    #if len(m1[0]) == len(m1[0]) and len(m1) == len(m2):
-    #    return [
-    #        [m1[i][j] + m2[i][j] for j in range(len(m1[0]))] for i in range(len(m1))
-    #    ]
-    #else:
-    #    print("Matrices are not of the same dimensions")
-    #    return 0
-
 
 def matrix_mul(m1, m2):
     result = np.random.randint(1, size=(128, 128))  # zeros array
@@ -85,6 +78,23 @@ def matrix_determinant(matrix):
 
     return det
 
+class Sortowanie(unittest.TestCase):
+    def test_equal_reverse(self):
+        x = random.sample(range(1, 100), 50)
+        x1 = deepcopy(x)
+        X1 = sort(x)
+        x1.sort(reverse=True)#descending
+        self.assertEqual(X1, x1)
+    def test_equal_normal(self):
+        x = random.sample(range(1, 100), 50)
+        x1 = deepcopy(x)
+        X1 = sort(x)
+        x1.sort()
+        self.assertNotEqual(X1, x1)
+        #pusta lista, elementy ktore sie nie da sortowac
+
+#class RownanieKwadratowe():
+#    def
 
 # EX4
 if __name__ == "__main__":
@@ -108,7 +118,10 @@ if __name__ == "__main__":
     print("List before sorting:")
     print(randomList)
     print("List after sorting:")
-    sort(randomList)
+    print(sort(randomList))
+    print("List after sorting python:")
+    randomList.sort()
+    print(randomList)
 
     # scalarProduct
     print("----------------------------------------------------------")
@@ -155,3 +168,4 @@ if __name__ == "__main__":
     print("numpy test: ", np.linalg.det(randomMatrix3))
     print("Caluclate matrix determinant of random matrix:", matrix_determinant(A))
     print("numpy test: ", np.linalg.det(A))
+    unittest.main();

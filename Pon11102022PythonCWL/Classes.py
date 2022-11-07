@@ -1,5 +1,7 @@
 from ast import Expression
 import numpy as np
+import unittest
+
 class Complex:
     def __init__(self, realpart, imaginarypart):
         self.real = realpart
@@ -26,6 +28,7 @@ class Complex:
         (self.real * other.real + self.imaginary * other.imaginary)/(divisor),
         (self.imaginary * other.real - self.real * other.imaginary)/(divisor)
                    )
+
     #Calculator
 def Calc(num1, num2, operation):
     num1 = num1.split()
@@ -52,29 +55,35 @@ def printComplex(complex_number):
         print(complex_number.real, "+", complex_number.imaginary,'j')
     else:
         print(complex_number.real, complex_number.imaginary,'j')
+
+class Calculator(unittest.TestCase):#asercja czy operacja siê wywowa³a, i kolejny test czy operacja jest prawid³owa
+    def testAdd(self):
+        Calc("1 + 2j", "1 + 1j", "+")
+
 #EX5
 if __name__ == "__main__":
-    # Complex numbers
-    print("----------------------------------------------------------")
-    print("Ex5.1, Complex number class and functions:")
-    num1 = Complex(2,1)
-    num2 = Complex(2,2)
-    complexaddresult = num1 + num2
-    complexsubresult = num1 - num2
-    print(complexaddresult.real, complexaddresult.imaginary,'j')
-    print(complexsubresult.real, complexsubresult.imaginary,'j')
-    printComplex(num1)
+    ## Complex numbers
+    #print("----------------------------------------------------------")
+    #print("Ex5.1, Complex number class and functions:")
+    #num1 = Complex(2,1)
+    #num2 = Complex(2,2)
+    #complexaddresult = num1 + num2
+    #complexsubresult = num1 - num2
+    #print(complexaddresult.real, complexaddresult.imaginary,'j')
+    #print(complexsubresult.real, complexsubresult.imaginary,'j')
+    #printComplex(num1)
     # Calculator test
-    print("----------------------------------------------------------")
-    print("Ex5.2, Calculator test:")
-    using = True
-    while(using):
-        print("Enter input in the format x + yj")
-        num1 = input("Enter your first value: ")
-        operation = input("Enter operation you want to do: ")
-        num2 = input("Enter your second value: ")
-        print(num1, operation, num2, end="")
-        printComplex(Calc(num1, num2, operation))
-        using = input("Do you want to continuee or exit(y/n): ")
-        if(using != 'y'):
-            using = False
+    #print("----------------------------------------------------------")
+    #print("Ex5.2, Calculator test:")
+    #using = True
+    #while(using):
+    #    print("Enter input in the format x + yj")
+    #    num1 = input("Enter your first value: ")
+    #    operation = input("Enter operation you want to do: ")
+    #    num2 = input("Enter your second value: ")
+    #    print(num1, operation, num2, end="")
+    #    printComplex(Calc(num1, num2, operation))
+    #    using = input("Do you want to continuee or exit(y/n): ")
+    #    if(using != 'y'):
+    #        using = False
+    unittest.main();
