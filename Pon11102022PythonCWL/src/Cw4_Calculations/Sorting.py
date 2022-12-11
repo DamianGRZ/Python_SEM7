@@ -1,8 +1,4 @@
-from copy import deepcopy
-import math
 import random
-import numpy as np
-import unittest
 
 def sort(toSort):
     listLenght = len(toSort)
@@ -19,7 +15,7 @@ def main():
     print("List after sorting:")
     print(sort(randomList))
     print("List after sorting python:")
-    randomList.sort()
+    randomList.sort(reverse=True)
     print(randomList)
 
 if __name__ == "__main__":
