@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>25acb004-8d8e-44c0-a8c1-97c1a51d785b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Classes.py</StartupFile>
+    <StartupFile>src\CW7\Histogram.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -12,6 +12,7 @@
     <Name>Pon11102022PythonCWL</Name>
     <RootNamespace>Pon11102022PythonCWL</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,15 +23,29 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Calculations_and_algorithms.py" />
-    <Compile Include="Classes.py" />
-    <Compile Include="inout.py" />
-    <Compile Include="Jsonnn.py" />
-    <Compile Include="ParsowanieXMLdom.py" />
-    <Compile Include="ParsowanieXMLsax.py" />
-    <Compile Include="text.py" />
-    <Compile Include="workWithFiles.py" />
-    <Compile Include="Pon11102022PythonCWL.py" />
+    <Compile Include="src\Cw1\HelloWorld.py" />
+    <Compile Include="src\Cw1\InputOutput.py" />
+    <Compile Include="src\CW7\5Philosophers.py" />
+    <Compile Include="src\CW7\Histogram.py" />
+    <Compile Include="UnitTests\CW4_Calculations\quadraticEquation_test.py" />
+    <Compile Include="UnitTests\CW4_Calculations\Sorting_test.py" />
+    <Compile Include="src\Cw5_Classes\Classes.py" />
+    <Compile Include="src\Cw1\Lock.py" />
+    <Compile Include="src\Cw3_Text\ChangeWordsInTextFile.py" />
+    <Compile Include="src\Cw2_Files\CatalogStructure.py" />
+    <Compile Include="src\Cw2_Files\CountFiles.py" />
+    <Compile Include="src\Cw2_Files\ExtensionConversion.py" />
+    <Compile Include="src\Cw3_Text\DeleteWordsFromTextFile.py" />
+    <Compile Include="src\Cw6_Data\Jsonnn.py" />
+    <Compile Include="src\Cw4_Calculations\MatrixDeterminant.py" />
+    <Compile Include="src\Cw4_Calculations\MatrixMultiplication.py" />
+    <Compile Include="src\Cw4_Calculations\MatrixSum.py" />
+    <Compile Include="src\Cw6_Data\ParsowanieXMLdom.py" />
+    <Compile Include="src\Cw6_Data\ParsowanieXMLsax.py" />
+    <Compile Include="src\Cw4_Calculations\quadraticEquation.py" />
+    <Compile Include="src\Cw4_Calculations\ScalarProduct.py" />
+    <Compile Include="src\Cw4_Calculations\Sorting.py" />
+    <Compile Include="UnitTests\CW5_Classes\Complex_test.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -42,6 +57,27 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X64</Architecture>
     </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\CW7\" />
+    <Folder Include="UnitTests\" />
+    <Folder Include="src\" />
+    <Folder Include="src\Cw1\" />
+    <Folder Include="src\Cw2_Files\" />
+    <Folder Include="src\Cw3_Text\" />
+    <Folder Include="src\Cw4_Calculations\" />
+    <Folder Include="src\Cw5_Classes\" />
+    <Folder Include="src\Cw6_Data\" />
+    <Folder Include="UnitTests\CW4_Calculations\" />
+    <Folder Include="UnitTests\CW5_Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\Cw6_Data\books - Copy.xml" />
+    <Content Include="src\Cw6_Data\books.xml" />
+    <Content Include="src\Cw6_Data\Cars - Copy - Copy.json" />
+    <Content Include="src\Cw6_Data\Cars.json" />
+    <Content Include="src\Cw6_Data\Ex6.xml" />
+    <Content Include="src\Cw6_Data\Newbooks.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
