@@ -1,5 +1,3 @@
-import numpy as np
-
 def scalarProduct(a, b):
     try:
         if(len(a) == len(b)):
